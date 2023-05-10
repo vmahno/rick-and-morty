@@ -33,8 +33,8 @@ public class MovieCharacterController {
 
     @GetMapping("/by-name")
     @ApiOperation(value = "get any character by name or it's part")
-    public List<CharacterResponseDto> findAllByName(@RequestParam("name") String namaPart) {
-        return characterService.findAllByNameContains(namaPart).stream()
+    public List<CharacterResponseDto> findAllByName(@RequestParam("name") String namePart) {
+        return characterService.findAllByNameContains(namePart).stream()
                 .map(mapper::toResponseDto)
                 .collect(Collectors.toList());
     }
